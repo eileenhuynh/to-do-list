@@ -1,8 +1,6 @@
 
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("tasklist-container");
-const checkbox = li.querySelector("input");
-const deleteBttn = li.querySelector(".delete-btn");
 const completedCount = document.getElementById("completed-counter");
 const totalCount = document.getElementById("uncompleted-counter");
 
@@ -19,16 +17,32 @@ function addTask() {
             <input type="checkbox">
             <span>${task}</span>
         </label>
-        <span class="delete-btn">X</span>
+        <span class="delete-btn">Delete</span>
     `;
 
     listContainer.appendChild(li);
     inputBox.value = "";
+
+    const checkbox = li.querySelector("input");
+    const deleteBttn = li.querySelector(".delete-btn");
+
+    checkbox.addEventListener("click", function () {
+        li.classList.toggle("completed", checkbox.checked);
+        updateCounter();
+    });
+
+    deleteBttn.addEventListener("click", function() {
+        li.remove();
+        updateCounter();
+    });
+
+    updateCounter();
 }
 
-checkbox.addEventListener("click", function () {
-    li.classList.toggle("completed", checkbox.checked);
-    updateCounter();
+inputBox.addEventListener("keyup", function(event) {
+    if(event.key == "Enter") {
+        addTask();
+    }
 });
 
 function updateCounter() {
@@ -38,8 +52,3 @@ function updateCounter() {
     completedCount.textContent = completedTasks;
     totalCount.textCount = totalTasks;
 }
-
-deleteBttn.addEventListener("click", function() {
-    li.remove();
-    updateCounter();
-});
