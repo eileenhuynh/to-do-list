@@ -1,0 +1,25 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "to do list",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eileenhuynh/to-do-list.git"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "eileen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eileenhuynh/to-do-list/issues"
+  },
+  "homepage": "https://github.com/eileenhuynh/to-do-list#readme",
+  "devDependencies": {
+    "electron": "^37.2.2"
+  }
+}
