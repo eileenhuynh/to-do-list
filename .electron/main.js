@@ -1,12 +1,8 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow } = require('electron/main')
 //for TypeScript, can import main process modules by require('electron/main') 
 
-const inputBox = document.getElementById("input-box");
-const listContainer = document.getElementById("list-container");
+//runs in Node environment and manages windows, does not have access to document and cannot manipulate the DOM
 
-function addTask() {
-    
-}
 //loads web page into new BrowserWindow instance
 const createWindow = () => {
   const win = new BrowserWindow({
