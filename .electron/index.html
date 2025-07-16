@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Do or Die List</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div id="todo-container">
+        <div id="header">
+          <h1>Do or Die List</h1>
+        </div>
+    </div>
+
+    <div id="todo-form">
+      <input 
+        type="text"
+        class="input-item"
+        name="input_box"
+        id="input-box"
+        placeholder="next task"
+      />
+      <button id="submit-button" onclick="addTask()">Add</button>
+
+      <ul id="tasklist-container"></ul>
+      <hr/>
+
+      <div class="counter-container">
+        <div id="task-counters">
+          <span id="completed-counter">0</span> of <span id="total-counter">0</span> tasks completed
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
